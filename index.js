@@ -1,6 +1,6 @@
-const PORT = process.env.PORT || 8000
-const express = require('express')
 const {MongoClient, ObjectId} = require('mongodb')
+const express = require('express')
+const PORT = process.env.PORT || 8000
 const {v4: uuidv4} = require('uuid')
 const jwt = require('jsonwebtoken')
 const cors = require('cors')
