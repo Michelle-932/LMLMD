@@ -1,4 +1,4 @@
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const express = require('express')
 const {MongoClient, ObjectId} = require('mongodb')
 const {v4: uuidv4} = require('uuid')
