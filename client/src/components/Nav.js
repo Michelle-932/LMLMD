@@ -2,15 +2,22 @@ import React, {useState} from 'react'
 import logo from '../images/lmlmdblack.png'
 import {useCookies} from 'react-cookie'
 import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const Nav = ({authToken, minimal, setShowModal, showModal, setIsSignUp}) => {
     const [ cookies, setCookie, removeCookie ] = useCookies(['user'])
     const [burgerOpen, setBurgerOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
+    let navigate = useNavigate()
+
     const handleClick = () => {
         setShowModal(true)
         setIsSignUp(false)
+    }
+
+    const handleClick2 = () => {
+        navigate('/')
     }
 
     const toggleBurgerMenu = () => {
@@ -21,14 +28,14 @@ const Nav = ({authToken, minimal, setShowModal, showModal, setIsSignUp}) => {
     const logout = () => {
         removeCookie('UserId', cookies.UserId)
         removeCookie('AuthToken', cookies.AuthToken)
-        window.location.reload()
+        navigate('/')
     }
 
 
     return (
         <nav> 
             <div className="logo-container">
-                <img className="logo" src={logo}/>
+                <img className="logo" src={logo} onClick={handleClick2}/>
             </div>
 
 
@@ -53,11 +60,3 @@ const Nav = ({authToken, minimal, setShowModal, showModal, setIsSignUp}) => {
 }
 export default Nav
 
-
-
-            {/* <i className="log-out-icon" onClick={logout}>⇦</i> */}
-            {/* {!authToken && !minimal && <button 
-                className="nav-button"
-                onClick={handleClick}
-                disabled={showModal}
-            >Log in</button>} */}

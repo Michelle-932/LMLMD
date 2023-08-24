@@ -8,40 +8,43 @@ import {useNavigate} from 'react-router-dom'
 const Demo = () => {
     const [showModal, setShowModal] = useState(false)
     const [isSignUp, setIsSignUp] = useState(false)
-    const [cookies, setCookie, removeCookie] = useCookies(['user'])
+    // const [cookies, setCookie, removeCookie] = useCookies(['user'])
 
-    const authToken = cookies.AuthToken
+    // const authToken = cookies.AuthToken
 
     let navigate = useNavigate()
 
-    const handleClick = () => {
-        if (authToken) {
-            removeCookie('UserId', cookies.UserId)
-            removeCookie('AuthToken', cookies.AuthToken)
-            window.location.reload()
-            return
-        }
-        setShowModal(true)
-        setIsSignUp(true)
-    }
+    // const handleClick = () => {
+    //     // if (authToken) {
+    //     //     removeCookie('UserId', cookies.UserId)
+    //     //     removeCookie('AuthToken', cookies.AuthToken)
+    //     //     window.location.reload()
+    //     //     return
+    //     // }
+    //     setShowModal(true)
+    //     setIsSignUp(true)
+    // }
 
-    const handleClick2 = () => {
-        if (authToken) {
-            removeCookie('UserId', cookies.UserId)
-            removeCookie('AuthToken', cookies.AuthToken)
-            window.location.reload()
-            return
-        }
-        setShowModal(true)
-        setIsSignUp(false)
-    }
+    // const handleClick2 = () => {
+    //     // if (authToken) {
+    //     //     removeCookie('UserId', cookies.UserId)
+    //     //     removeCookie('AuthToken', cookies.AuthToken)
+    //     //     window.location.reload()
+    //     //     return
+    //     // }
+    //     setShowModal(true)
+    //     setIsSignUp(false)
+    // }
+
+    // // const handleClick3 = () => {
+    // //     if (authToken) {
+    // //         navigate('/dashboard')
+    // //     }
+    // // }
 
     const handleClick3 = () => {
-        if (authToken) {
-            navigate('/dashboard')
-        }
+        navigate('/')
     }
-
 
     return (
         <>
@@ -51,8 +54,12 @@ const Demo = () => {
                 <h3 className="demo-title">"Dating is rough. Bring your dog!"</h3>
 
                 <div className="button-container">
+                    <button className="primary-button home-button" onClick={handleClick3}>HOME</button>
+                    {/* <button className="primary-button home-button">DEMO MODE</button> */}
+                    <a href="https://github.com/michelle-932/LMLMD" target="_blank" rel="noopener noreferrer">
+                        <button className="primary-button home-button">GITHUB</button></a>
 
-                    {authToken && <button
+                    {/* {authToken && <button
                         className="primary-button home-button"
                         onClick={handleClick3}
                     >Dashboard</button>}
@@ -64,7 +71,7 @@ const Demo = () => {
                     {showModal && (
                         <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
                     )}
-                    <button className="primary-button home-button">DEMO</button>
+                    <button className="primary-button home-button">DEMO</button> */}
 
                 </div>
             </div>
