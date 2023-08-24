@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/user', {
+            const response = await axios.get('https://kind-jade-katydid-tie.cyclic.cloud/user', {
                 params: { userId }
             })
             console.log("Response from /user:", response.data)

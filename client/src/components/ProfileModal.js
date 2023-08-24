@@ -15,7 +15,7 @@ const ProfileModal = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/user', {
+            const response = await axios.get('https://kind-jade-katydid-tie.cyclic.cloud/user', {
                 params: {userId}
             })
             setUser(response.data)
@@ -26,7 +26,7 @@ const ProfileModal = () => {
 
     const getGenderedUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/gendered-users', {
+            const response = await axios.get('https://kind-jade-katydid-tie.cyclic.cloud/gendered-users', {
                 params: {gender: user?.gender_interest}
             })
             setGenderedUsers(response.data)
@@ -48,7 +48,7 @@ const ProfileModal = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('http://localhost:8000/addmatch', {
+            await axios.put('https://kind-jade-katydid-tie.cyclic.cloud/addmatch', {
                 userId,
                 matchedUserId
             })
