@@ -10,8 +10,7 @@ require('dotenv').config()
 const uri = process.env.URI
 
 const app = express()
-app.use(cors())
-app.use(express.json())
+
 
 let db;
 
@@ -31,6 +30,9 @@ app.listen(PORT, () => {
 });
 // Call the async function to establish the database connection
 mongoConnect();
+
+app.use(cors())
+app.use(express.json())
 
 
 // Default
