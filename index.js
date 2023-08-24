@@ -17,8 +17,8 @@ app.use(express.json())
     const client = new MongoClient(uri);
   
     try {
-      await client.connect();
-      console.log('Connected to MongoDB');
+        await client.connect();
+        console.log('Connected to MongoDB');
 
 
         // Default
@@ -139,117 +139,6 @@ app.use(express.json())
                 await client.close()
             }
         })
-
-        // app.get('/mutual-gender-matches', async (req, res) => {
-        //     const client = new MongoClient(uri);
-        //     const userGender = req.query.gender;
-        //     const userGenderInterest = req.query.genderInterest;
-
-        //     try {
-        //         await client.connect();
-        //         const database = client.db('app-data');
-        //         const users = database.collection('users');
-
-        //         const genderInterestQuery = {
-        //             men: userGenderInterest.men && userGender === 'man',
-        //             women: userGenderInterest.women && userGender === 'woman',
-        //             nonBinary: userGenderInterest.nonBinary && userGender === 'nonBinary',
-        //         };
-
-        //         const query = {
-        //             gender_identity: { $ne: userGender }, // Exclude matches with undesired gender identity
-        //             $or: [
-        //                 { 'gender_interest.men': genderInterestQuery.men },
-        //                 { 'gender_interest.women': genderInterestQuery.women },
-        //                 { 'gender_interest.nonBinary': genderInterestQuery.nonBinary },
-        //             ]
-        //         };
-
-        //         const foundUsers = await users.find(query).toArray();
-        //         res.send(foundUsers);
-        //     } finally {
-        //         await client.close();
-        //     }
-        // });
-
-
-        // app.get('/mutual-gender-matches', async (req, res) => {
-        //     const client = new MongoClient(uri);
-        //     // const gender = req.query.gender;
-        //     const userGender = req.query.gender;
-        //     const userGenderInterest = req.query.genderInterest
-        //     // const userId = req.query.userId;
-
-        //     try {
-        //         await client.connect();
-        //         const database = client.db('app-data');
-        //         const users = database.collection('users');
-
-        //         const genderInterestQuery = []
-
-        //         if (userGenderInterest.men && userGender === 'man') {
-        //             genderInterestQuery.push({gender_interest: {men: true}})
-        //         }
-        //         if (userGenderInterest.women && userGender === 'woman') {
-        //             genderInterestQuery.push({gender_interest: {women: true}})
-        //         }
-        //         if (userGenderInterest.nonBinary && userGender === 'nonBinary') {
-        //             genderInterestQuery.push({gender_interest: {nonBinary: true}})
-        //         }
-
-        //         const query = {
-        //             $and: [
-        //                 {gender_identity: {$ne: userGender}},
-        //                 ...(genderInterestQuery.length > 0 ? [{$or: genderInterestQuery}] : [])
-        //             ]
-        //             // gender_interest: {
-        //             //     men: userGender === 'man',
-        //             //     women: userGender === 'woman',
-        //             //     nonBinary: userGender === 'nonBinary'
-        //             // }
-        //             // gender_interest: { $eq: gender }
-        //         }
-
-        //         const foundUsers = await users.find(query).toArray()
-        //         res.send(foundUsers)
-
-        //         // // Fetch current user's data
-        //         // const currentUser = await users.findOne({ user_id: userId });
-        //         // const currentUserGenderIdentity = currentUser.gender_identity;
-        //         // const currentUserGenderInterest = currentUser.gender_interest;
-
-        //         // // Fetch potential matches based on gender identity
-        //         // const potentialMatches = await users.find({ gender_identity: currentUserGenderInterest }).toArray();
-
-        //         // // Filter matches based on gender interest
-        //         // const mutualMatches = potentialMatches.filter((match) => {
-        //         //     const matchGenderInterest = match.gender_interest;
-        //         //     return matchGenderInterest[currentUserGenderIdentity];
-        //         // });
-
-        //         // res.send(mutualMatches);
-        //     } finally {
-        //         await client.close();
-        //     }
-        // });
-
-
-        // app.get('/gendered-users', async (req, res) => {
-        //     const client = new MongoClient(uri)
-        //     const gender = req.query.gender
-
-        //     try {
-        //         await client.connect()
-        //         const database = client.db('app-data')
-        //         const users = database.collection('users')
-        //         const query = {gender_identity: {$eq : gender}}
-        //         const foundUsers = await users.find(query).toArray()
-        //         res.send(foundUsers)
-
-        //     } finally {
-        //         await client.close()
-        //     }
-        // })
 
         app.get('/mutual-gender-matches', async (req, res) => {
             const client = new MongoClient(uri);
@@ -558,4 +447,3 @@ app.use(express.json())
       
 
 
-// app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
