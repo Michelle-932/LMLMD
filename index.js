@@ -37,7 +37,7 @@ app.use(express.json())
 
 // Default
 app.get('/', (req, res) => {
-    res.json('Hello to my app')
+    res.json('Backend server is running')
 })
 
 // Sign up to the Database
