@@ -16,7 +16,7 @@ const ChatPage = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/user', {
+            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/user', {
                 params: {userId}
             })
             setUser(response.data)
@@ -38,7 +38,7 @@ const ChatPage = () => {
 
     const getFoundUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/mutual-gender-matches', {
+            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/mutual-gender-matches', {
                 params: {
                     gender: user?.gender_identity, 
                     genderInterest: `${user?.gender_interest.men ? 'men,' : ''}${user?.gender_interest.women ? 'women,' : ''}${user?.gender_interest.nonBinary ? 'nonBinary' : ''}`
@@ -69,7 +69,7 @@ const ChatPage = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('http://localhost:8000/addmatch', {
+            await axios.put('https://dark-pink-fossa-gear.cyclic.app/addmatch', {
                 userId,
                 matchedUserId
             })

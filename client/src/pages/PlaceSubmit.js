@@ -23,7 +23,7 @@ const PlaceSubmit = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post('http://localhost:8000/addplace', formData)
+            const response = await axios.post('https://dark-pink-fossa-gear.cyclic.app/addplace', formData)
             const success = response.status == 201
             if (success) navigate('/home')
         } catch (err) {
