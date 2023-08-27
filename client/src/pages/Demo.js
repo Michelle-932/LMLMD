@@ -6,40 +6,16 @@ import Footer from '../components/Footer'
 import {useNavigate} from 'react-router-dom'
 
 const Demo = () => {
-    const [showModal, setShowModal] = useState(false)
-    const [isSignUp, setIsSignUp] = useState(false)
-    const [cookies, setCookie, removeCookie] = useCookies(['user'])
+    const [showModal, setShowModal] = useState()
+    const [isSignUp, setIsSignUp] = useState()
 
-    const authToken = cookies.AuthToken
 
     let navigate = useNavigate()
 
-    const handleClick = () => {
-        if (authToken) {
-            removeCookie('UserId', cookies.UserId)
-            removeCookie('AuthToken', cookies.AuthToken)
-            window.location.reload()
-            return
-        }
-        setShowModal(true)
-        setIsSignUp(true)
-    }
 
-    const handleClick2 = () => {
-        if (authToken) {
-            removeCookie('UserId', cookies.UserId)
-            removeCookie('AuthToken', cookies.AuthToken)
-            window.location.reload()
-            return
-        }
-        setShowModal(true)
-        setIsSignUp(false)
-    }
 
     const handleClick3 = () => {
-        if (authToken) {
-            navigate('/dashboard')
-        }
+        navigate('/')
     }
 
 
@@ -52,19 +28,12 @@ const Demo = () => {
 
                 <div className="button-container">
 
-                    {authToken && <button
-                        className="primary-button home-button"
-                        onClick={handleClick3}
-                    >Dashboard</button>}
+                    <button className="primary-button home-button" onClick={handleClick3}>HOME</button>
+                        {/* <button className="primary-button home-button">DEMO MODE</button> */}
+                        <a href="https://github.com/michelle-932/LMLMD" target="_blank" rel="noopener noreferrer">
+                            <button className="primary-button home-button">GITHUB</button></a>
                     
-                    
-                    <button className="primary-button home-button" onClick={handleClick}>
-                        {authToken ? 'Signout' : 'SIGNUP'}
-                    </button>
-                    {showModal && (
-                        <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
-                    )}
-                    <button className="primary-button home-button">DEMO</button>
+
 
                 </div>
             </div>
@@ -113,3 +82,46 @@ const Demo = () => {
 }
 
 export default Demo
+
+    // const handleClick = () => {
+    //     if (authToken) {
+    //         removeCookie('UserId', cookies.UserId)
+    //         removeCookie('AuthToken', cookies.AuthToken)
+    //         window.location.reload()
+    //         return
+    //     }
+    //     setShowModal(true)
+    //     setIsSignUp(true)
+    // }
+
+    // const handleClick2 = () => {
+    //     if (authToken) {
+    //         removeCookie('UserId', cookies.UserId)
+    //         removeCookie('AuthToken', cookies.AuthToken)
+    //         window.location.reload()
+    //         return
+    //     }
+    //     setShowModal(true)
+    //     setIsSignUp(false)
+    // }
+
+    // const handleClick3 = () => {
+    //     if (authToken) {
+    //         navigate('/dashboard')
+    //     }
+    // }
+
+
+                    {/* {authToken && <button
+                        className="primary-button home-button"
+                        onClick={handleClick3}
+                    >Dashboard</button>}
+                    
+                    
+                    <button className="primary-button home-button" onClick={handleClick}>
+                        {authToken ? 'Signout' : 'SIGNUP'}
+                    </button>
+                    {showModal && (
+                        <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
+                    )}
+                    <button className="primary-button home-button">DEMO</button> */}
