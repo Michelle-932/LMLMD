@@ -37,7 +37,7 @@ app.use(express.json())
 
 // Default
 app.get('/', (req, res) => {
-    res.json('Backend server for lovemelovemydog.com ©2022-2023 Michelle Kirkland')
+    res.json('Backend server is running')
 })
 
 // Sign up to the Database
