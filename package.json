@@ -7,7 +7,6 @@
     "start:backend": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "main": "./server/index.js",
   "author": "",
   "license": "ISC",
   "dependencies": {
