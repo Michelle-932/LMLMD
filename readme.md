@@ -23,11 +23,11 @@
 
 ![img](https://i.imgur.com/ZPOqula.jpg)
 
-## No more uncomfortable dates
+## No more uncomfortable dates!
 
 Watching a rom-com and seeing the familiar montage of awful dates, I wanted to build an app to solve some of the problems I remember having when trying to meet new people -- but with your dog! 
 
-- <strong>Planning Dates:</strong> It's hard to find dog-friendly places to go, so you can meet your match and plan your date with this app
+- <strong>Planning Dates:</strong> It's hard to find dog-friendly places to go, so you can meet your match and plan your date with this app!
 - <strong>Safety:</strong> Dog-friendly places are well lit, full of other people and open during business hours
 - <strong>Awkwardness:</strong> Solves the problem of having nothing to talk about. At least you know you both like dogs!
 - <strong>Familiarity:</strong> Your dog is an excellent judge of character and can help you feel better in unfamiliar situations
@@ -36,7 +36,7 @@ Watching a rom-com and seeing the familiar montage of awful dates, I wanted to b
 
 * <strong>Gender Matching Logic:</strong> The app provides users with a comprehensive filtering mechanism that matches individuals based on gender identities and preferences. Using a complex backend filtering logic, users can find potential matches who align with their gender identity and preferences for 'men', 'women', and 'non-binary' individuals.
 
-![img](https://i.imgur.com/MXbXgr3.gif)
+![screenshot](https://i.imgur.com/MXbXgr3.gif)
 
 * <strong>Dog-friendly Date Planning:</strong> Taking user interactions into the real world, Love Me, Love My Dog offers a unique feature that enables users to discover local dog-friendly places suitable for dates. <p>Leveraging MongoDB as the backend database, users can save their favorite venues, explore new suggestions, and even contribute by submitting new dog-friendly places. This feature enhances the app's utility beyond matchmaking and fosters meaningful, dog-centric connections.</p>
 
@@ -88,12 +88,11 @@ This software uses the following open source packages:
 
 ## License
 
-* Published under BSD-3 Clause License.
 * Love Me, Love My Dog app and concept copyright ©2023 Michelle Kirkland.
 * Love Me, Love My Dog tagline "Dating is rough. Bring your dog!" copyright ©2023 Michelle Kirkland.
 
 ---
 
 > [michellekirkland.io](https://www.michellekirkland.io) &nbsp;&middot;&nbsp;
-> [GitHub](https://github.com/Michelle-932) &nbsp;&middot;&nbsp;
-> [Twitter](https://twitter.com/megabee415)
+> GitHub [@michelle-932](https://github.com/Michelle-932) &nbsp;&middot;&nbsp;
+> Twitter [@megabee415](https://twitter.com/megabee415)

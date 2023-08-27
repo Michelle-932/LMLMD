@@ -21,7 +21,7 @@ const MyMatches = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('https://kind-jade-katydid-tie.cyclic.cloud/user', {
+            const response = await axios.get('http://localhost:8000/user', {
                 params: { userId }
             })
             console.log("Response from /user:", response.data)
@@ -34,7 +34,7 @@ const MyMatches = () => {
 
     const getFoundUsers = async () => {
         try {
-            const response = await axios.get('https://kind-jade-katydid-tie.cyclic.cloud/mutual-gender-matches', {
+            const response = await axios.get('http://localhost:8000/mutual-gender-matches', {
                 params: {
                     gender: user?.gender_identity, 
                     genderInterest: `${user?.gender_interest.men ? 'men,' : ''}${user?.gender_interest.women ? 'women,' : ''}${user?.gender_interest.nonBinary ? 'nonBinary' : ''}`
@@ -60,7 +60,7 @@ const MyMatches = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('https://kind-jade-katydid-tie.cyclic.cloud/addmatch', {
+            await axios.put('http://localhost:8000/addmatch', {
                 userId,
                 matchedUserId
             })

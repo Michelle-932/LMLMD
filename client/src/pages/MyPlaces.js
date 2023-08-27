@@ -15,7 +15,7 @@ const MyPlaces = ({saved_places}) => {
     const fetchSavedPlaces = async () => {
       try { 
         console.log("fetching saved places for userID:", userId)
-        const response = await axios.get(`https://kind-jade-katydid-tie.cyclic.cloud/save-places?userId=${userId}`)
+        const response = await axios.get(`http://localhost:8000/save-places?userId=${userId}`)
         const data = response.data
         console.log("Response data:", data)
         setSavedPlaces(response.data)

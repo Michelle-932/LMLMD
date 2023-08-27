@@ -13,7 +13,7 @@ const ProfileDisplay = ({ user, clickedUser }) => {
 
   const getClickedUsersProfile = async () => {
     try {
-      const response = await axios.get('https://kind-jade-katydid-tie.cyclic.cloud/user', {
+      const response = await axios.get('http://localhost:8000/user', {
         params: { userId: clickedUserId },
       });
       setClickedUsersProfile(response.data);

@@ -27,7 +27,7 @@ const AuthModal = ({setShowModal, isSignUp}) => {
             }
             console.log('posting', email, password)
             
-            const response = await axios.post(`https://kind-jade-katydid-tie.cyclic.cloud/${isSignUp ? 'signup' : 'login'}`, {email, password})
+            const response = await axios.post(`http://localhost:8000/${isSignUp ? 'signup' : 'login'}`, {email, password})
 
             setCookie('AuthToken', response.data.token)
             setCookie('UserId', response.data.userId)
@@ -38,7 +38,7 @@ const AuthModal = ({setShowModal, isSignUp}) => {
             if (success && isSignUp) navigate('/onboarding')
             if (success && !isSignUp) navigate('/dashboard')
 
-            // window.location.reload()
+            window.location.reload()
 
         } catch(error) {
             console.log(error)

@@ -23,7 +23,7 @@ const PlaceSubmit = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post('https://kind-jade-katydid-tie.cyclic.cloud/addplace', formData)
+            const response = await axios.post('http://localhost:8000/addplace', formData)
             const success = response.status == 201
             if (success) navigate('/home')
         } catch (err) {

@@ -15,7 +15,7 @@ const ChatInput = ({user, clickedUser, getUsersMessages, getClickedUsersMessages
         }
 
         try {
-            await axios.post('https://kind-jade-katydid-tie.cyclic.cloud/message', {message})
+            await axios.post('http://localhost:8000/message', {message})
             getUsersMessages()
             getClickedUsersMessages()
             setTextArea("")

@@ -2,12 +2,10 @@
   "name": "datingapp",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0"
-  },
-  "dependencies": {
+    "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
     "react": "^17.0.2",
     "react-cookie": "^4.1.1",
