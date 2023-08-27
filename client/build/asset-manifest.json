@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e215b1c4.css",
+    "main.js": "/static/js/main.b0498916.js",
+    "static/media/sunsetcoupledog.jpeg": "/static/media/sunsetcoupledog.b2de491970179786fecd.jpeg",
+    "static/media/LMLMDVideo.mp4": "/static/media/LMLMDVideo.0ba04cb5b8ffaa6b8536.mp4",
+    "static/media/lmlmdblack.png": "/static/media/lmlmdblack.f0b82df4985f013288f1.png",
+    "static/media/lmlmdwhite.png": "/static/media/lmlmdwhite.8c73f1d31a8d193a5d82.png",
+    "index.html": "/index.html",
+    "main.e215b1c4.css.map": "/static/css/main.e215b1c4.css.map",
+    "main.b0498916.js.map": "/static/js/main.b0498916.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e215b1c4.css",
+    "static/js/main.b0498916.js"
+  ]
+}
