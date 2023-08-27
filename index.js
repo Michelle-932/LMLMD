@@ -1,6 +1,6 @@
-const PORT = 8000
-const express = require('express')
 const {MongoClient, ObjectId} = require('mongodb')
+const express = require('express')
+const PORT = process.env.PORT || 8000
 const {v4: uuidv4} = require('uuid')
 const jwt = require('jsonwebtoken')
 const cors = require('cors')
@@ -10,12 +10,34 @@ require('dotenv').config()
 const uri = process.env.URI
 
 const app = express()
+
+
+let db;
+
+const mongoConnect = async () => {
+    try {
+        const client = await MongoClient.connect(uri);
+        db = client.db('app-data');
+        console.log('Connected to MongoDB');
+    } catch (err) {
+        console.error('Error connecting to DB:', err);
+    }
+};
+
+// Define your route handlers here
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+// Call the async function to establish the database connection
+mongoConnect();
+
 app.use(cors())
 app.use(express.json())
 
+
 // Default
 app.get('/', (req, res) => {
-    res.json('Hello to my app')
+    res.json('Backend server is running')
 })
 
 // Sign up to the Database
@@ -132,116 +154,6 @@ app.get('/users', async (req, res) => {
     }
 })
 
-// app.get('/mutual-gender-matches', async (req, res) => {
-//     const client = new MongoClient(uri);
-//     const userGender = req.query.gender;
-//     const userGenderInterest = req.query.genderInterest;
-
-//     try {
-//         await client.connect();
-//         const database = client.db('app-data');
-//         const users = database.collection('users');
-
-//         const genderInterestQuery = {
-//             men: userGenderInterest.men && userGender === 'man',
-//             women: userGenderInterest.women && userGender === 'woman',
-//             nonBinary: userGenderInterest.nonBinary && userGender === 'nonBinary',
-//         };
-
-//         const query = {
-//             gender_identity: { $ne: userGender }, // Exclude matches with undesired gender identity
-//             $or: [
-//                 { 'gender_interest.men': genderInterestQuery.men },
-//                 { 'gender_interest.women': genderInterestQuery.women },
-//                 { 'gender_interest.nonBinary': genderInterestQuery.nonBinary },
-//             ]
-//         };
-
-//         const foundUsers = await users.find(query).toArray();
-//         res.send(foundUsers);
-//     } finally {
-//         await client.close();
-//     }
-// });
-
-
-// app.get('/mutual-gender-matches', async (req, res) => {
-//     const client = new MongoClient(uri);
-//     // const gender = req.query.gender;
-//     const userGender = req.query.gender;
-//     const userGenderInterest = req.query.genderInterest
-//     // const userId = req.query.userId;
-
-//     try {
-//         await client.connect();
-//         const database = client.db('app-data');
-//         const users = database.collection('users');
-
-//         const genderInterestQuery = []
-
-//         if (userGenderInterest.men && userGender === 'man') {
-//             genderInterestQuery.push({gender_interest: {men: true}})
-//         }
-//         if (userGenderInterest.women && userGender === 'woman') {
-//             genderInterestQuery.push({gender_interest: {women: true}})
-//         }
-//         if (userGenderInterest.nonBinary && userGender === 'nonBinary') {
-//             genderInterestQuery.push({gender_interest: {nonBinary: true}})
-//         }
-
-//         const query = {
-//             $and: [
-//                 {gender_identity: {$ne: userGender}},
-//                 ...(genderInterestQuery.length > 0 ? [{$or: genderInterestQuery}] : [])
-//             ]
-//             // gender_interest: {
-//             //     men: userGender === 'man',
-//             //     women: userGender === 'woman',
-//             //     nonBinary: userGender === 'nonBinary'
-//             // }
-//             // gender_interest: { $eq: gender }
-//         }
-
-//         const foundUsers = await users.find(query).toArray()
-//         res.send(foundUsers)
-
-//         // // Fetch current user's data
-//         // const currentUser = await users.findOne({ user_id: userId });
-//         // const currentUserGenderIdentity = currentUser.gender_identity;
-//         // const currentUserGenderInterest = currentUser.gender_interest;
-
-//         // // Fetch potential matches based on gender identity
-//         // const potentialMatches = await users.find({ gender_identity: currentUserGenderInterest }).toArray();
-
-//         // // Filter matches based on gender interest
-//         // const mutualMatches = potentialMatches.filter((match) => {
-//         //     const matchGenderInterest = match.gender_interest;
-//         //     return matchGenderInterest[currentUserGenderIdentity];
-//         // });
-
-//         // res.send(mutualMatches);
-//     } finally {
-//         await client.close();
-//     }
-// });
-
-
-// app.get('/gendered-users', async (req, res) => {
-//     const client = new MongoClient(uri)
-//     const gender = req.query.gender
-
-//     try {
-//         await client.connect()
-//         const database = client.db('app-data')
-//         const users = database.collection('users')
-//         const query = {gender_identity: {$eq : gender}}
-//         const foundUsers = await users.find(query).toArray()
-//         res.send(foundUsers)
-
-//     } finally {
-//         await client.close()
-//     }
-// })
 
 app.get('/mutual-gender-matches', async (req, res) => {
     const client = new MongoClient(uri);
@@ -540,4 +452,4 @@ app.get('/save-places', async (req, res) => {
       
 
 
-app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
+// app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
