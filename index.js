@@ -9,8 +9,9 @@ require('dotenv').config()
 
 const uri = process.env.URI
 
-const app = express()
+const path = require("path");
 
+const app = express()
 
 let db;
 
@@ -28,6 +29,20 @@ const mongoConnect = async () => {
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+// Serve static files from the client build folder
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+
+// Handle React Router routes
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
+
 // Call the async function to establish the database connection
 mongoConnect();
 
