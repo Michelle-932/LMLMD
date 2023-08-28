@@ -1,64 +1,47 @@
 const {MongoClient, ObjectId} = require('mongodb')
 const express = require('express')
-const PORT = process.env.PORT || 8000
+const path = require ('path')
+const cors = require('cors')
 const {v4: uuidv4} = require('uuid')
 const jwt = require('jsonwebtoken')
-const cors = require('cors')
 const bcrypt = require('bcrypt')
 require('dotenv').config()
 
+const PORT = process.env.PORT || 8000
+
+const app = express()
+
 const uri = process.env.URI
+let db;
+
+const mongoConnect = async () => {
+    try {
+        const client = await MongoClient.connect(uri);
+        db = client.db('app-data');
+        console.log('Connected to MongoDB');
+    } catch (err) {
+        console.error('Error connecting to DB:', err);
+    }
+};
 
 app.use(cors())
 app.use(express.json())
 
-const path = require("path");
-
-const app = express()
-
-// let db;
-
-// const mongoConnect = async () => {
-//     try {
-//         const client = await MongoClient.connect(uri)
-//         db = client.db('app-data');
-//         console.log('Connected to MongoDB');
-//     } catch (err) {
-//         console.error('Error connecting to DB:', err)
-//     }
-// };
-
-// Define your route handlers here
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`)
-// });
-
 // Serve static files from the client build folder
+app.use(express.static(path.resolve(__dirname, "client/build")));
 
-
-
-// app.use(express.static(path.resolve(__dirname, "client/build")))
-
-// // Handle React Router routes
-// app.get("*", function (req, res) {
-//   response.sendFile(path.resolve(__dirname, "client/build", "index.html"))
-// })
-
-// Start the server
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`)
-// });
-
-// Call the async function to establish the database connection
-// mongoConnect()
-
-
+// Handle React Router routes
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+});
 
 
 // Default
 app.get('/', (req, res) => {
     res.json('Backend server for lovemelovemydog.com app and concept ©2022-2023 Michelle Kirkland')
 })
+
+
 
 // Sign up to the Database
 app.post('/signup', async (req, res) => {
@@ -468,14 +451,6 @@ app.get('/save-places', async (req, res) => {
     }
 })
 
-
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, "client/build")));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
-    });
-}
-
+mongoConnect();
 
 app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
