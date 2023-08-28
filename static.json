@@ -1,4 +1,7 @@
 {
-    "root": "build",
-    "https_only": true
+    "root": "client/build",
+    "clean_urls": true,
+    "routes": {
+        "/**": "client/build/index.html"
+    }
 }
