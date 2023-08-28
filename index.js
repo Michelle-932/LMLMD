@@ -31,11 +31,11 @@ app.listen(PORT, () => {
 });
 
 // Serve static files from the client build folder
-app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.resolve(__dirname, "/client/build")));
 
 // Handle React Router routes
 app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+  response.sendFile(path.resolve(__dirname, "/client/build", "index.html"));
 });
 
 // Start the server
