@@ -15,7 +15,7 @@ const MyPlaces = ({saved_places}) => {
     const fetchSavedPlaces = async () => {
       try { 
         console.log("fetching saved places for userID:", userId)
-        const response = await axios.get(`https://dark-pink-fossa-gear.cyclic.app/save-places?userId=${userId}`)
+        const response = await axios.get(`https://lmlmd-aaf8048793e5.herokuapp.com/save-places?userId=${userId}`)
         const data = response.data
         console.log("Response data:", data)
         setSavedPlaces(response.data)

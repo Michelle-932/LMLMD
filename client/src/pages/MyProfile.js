@@ -18,7 +18,7 @@ const MyProfile = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/user', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/user', {
                 params: {userId}
             })
             setUser(response.data)
@@ -29,7 +29,7 @@ const MyProfile = () => {
 
     const getGenderedUsers = async () => {
         try {
-            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/gendered-users', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/gendered-users', {
                 params: {gender: user?.gender_interest}
             })
             setGenderedUsers(response.data)
@@ -51,7 +51,7 @@ const MyProfile = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('https://dark-pink-fossa-gear.cyclic.app/addmatch', {
+            await axios.put('https://lmlmd-aaf8048793e5.herokuapp.com/addmatch', {
                 userId,
                 matchedUserId
             })

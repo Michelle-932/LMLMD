@@ -16,7 +16,7 @@ const ChatPage = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/user', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/user', {
                 params: {userId}
             })
             setUser(response.data)
@@ -38,7 +38,7 @@ const ChatPage = () => {
 
     const getFoundUsers = async () => {
         try {
-            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/mutual-gender-matches', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/mutual-gender-matches', {
                 params: {
                     gender: user?.gender_identity, 
                     genderInterest: `${user?.gender_interest.men ? 'men,' : ''}${user?.gender_interest.women ? 'women,' : ''}${user?.gender_interest.nonBinary ? 'nonBinary' : ''}`
@@ -69,7 +69,7 @@ const ChatPage = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('https://dark-pink-fossa-gear.cyclic.app/addmatch', {
+            await axios.put('https://lmlmd-aaf8048793e5.herokuapp.com/addmatch', {
                 userId,
                 matchedUserId
             })

@@ -15,7 +15,7 @@ const ChatInput = ({user, clickedUser, getUsersMessages, getClickedUsersMessages
         }
 
         try {
-            await axios.post('http://localhost:8000/message', {message})
+            await axios.post('https://lmlmd-aaf8048793e5.herokuapp.com/message', {message})
             getUsersMessages()
             getClickedUsersMessages()
             setTextArea("")

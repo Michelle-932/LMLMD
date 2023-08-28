@@ -32,7 +32,7 @@ const OnBoarding = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put('https://dark-pink-fossa-gear.cyclic.app/user', {formData})
+            const response = await axios.put('https://lmlmd-aaf8048793e5.herokuapp.com/user', {formData})
             const success = response.status == 200
             if (success) navigate('/dashboard')
         } catch (err) {

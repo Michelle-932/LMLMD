@@ -14,7 +14,7 @@ const Dashboard = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('https://dark-pink-fossa-gear.cyclic.app/user', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/user', {
                 params: { userId }
             })
             console.log("Response from /user:", response.data)

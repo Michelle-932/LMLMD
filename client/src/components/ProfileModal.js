@@ -15,7 +15,7 @@ const ProfileModal = () => {
 
     const getUser = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/user', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/user', {
                 params: {userId}
             })
             setUser(response.data)
@@ -26,7 +26,7 @@ const ProfileModal = () => {
 
     const getGenderedUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/gendered-users', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/gendered-users', {
                 params: {gender: user?.gender_interest}
             })
             setGenderedUsers(response.data)

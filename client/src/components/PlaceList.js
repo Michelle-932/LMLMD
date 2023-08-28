@@ -10,7 +10,7 @@ const PlaceList = () => {
     // Fetch data from the backend API
     const fetchPlaces = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/places-by-metro'); 
+        const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/places-by-metro'); 
         setPlacesByMetro(response.data);
       } catch (error) {
         console.log(error);
@@ -32,7 +32,7 @@ const PlaceList = () => {
   
     try {
       // Make a POST request to your backend API to update the user's saved places
-      await axios.post('http://localhost:8000/save-places', {
+      await axios.post('https://lmlmd-aaf8048793e5.herokuapp.com/save-places', {
         userId: cookies.UserId, 
         savedPlaces: savedPlaces.includes(placeId) ? savedPlaces.filter((id) => id !== placeId) : [...savedPlaces, placeId]
       });

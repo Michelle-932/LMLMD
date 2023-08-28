@@ -12,7 +12,7 @@ const MatchesDisplay = ({matches, setClickedUser, user}) => {
 
     const getMatches = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/users', {
+            const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/users', {
                 params: {userIds: JSON.stringify(matchedUserIds)}
             })
             console.log("Response from /users:", response.data)

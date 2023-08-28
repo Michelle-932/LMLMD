@@ -13,7 +13,7 @@ const ProfileDisplay = ({ user, clickedUser }) => {
 
   const getClickedUsersProfile = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/user', {
+      const response = await axios.get('https://lmlmd-aaf8048793e5.herokuapp.com/user', {
         params: { userId: clickedUserId },
       });
       setClickedUsersProfile(response.data);

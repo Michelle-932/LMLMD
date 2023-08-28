@@ -27,7 +27,7 @@ const AuthModal = ({setShowModal, isSignUp}) => {
             }
             console.log('posting', email, password)
             
-            const response = await axios.post(`http://localhost:8000/${isSignUp ? 'signup' : 'login'}`, {email, password})
+            const response = await axios.post(`https://lmlmd-aaf8048793e5.herokuapp.com/${isSignUp ? 'signup' : 'login'}`, {email, password})
 
             setCookie('AuthToken', response.data.token)
             setCookie('UserId', response.data.userId)
