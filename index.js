@@ -34,12 +34,15 @@ const app = express()
 // });
 
 // Serve static files from the client build folder
-app.use(express.static(path.resolve(__dirname, "client/build")))
 
-// Handle React Router routes
-app.get("*", function (req, res) {
-  response.sendFile(path.resolve(__dirname, "client/build", "index.html"))
-})
+
+
+// app.use(express.static(path.resolve(__dirname, "client/build")))
+
+// // Handle React Router routes
+// app.get("*", function (req, res) {
+//   response.sendFile(path.resolve(__dirname, "client/build", "index.html"))
+// })
 
 // Start the server
 // app.listen(PORT, () => {
@@ -466,7 +469,13 @@ app.get('/save-places', async (req, res) => {
 })
 
 
-      
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "client/build")));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+    });
+}
 
 
 app.listen(PORT, () => console.log('Server running on PORT ' + PORT))
