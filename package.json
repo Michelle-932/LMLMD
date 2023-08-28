@@ -1,12 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "engines": {
     "node": "19.x",
     "npm": "8.19.2"
   },
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "start": "serve -s build",
     "dev": "react-scripts start",
