@@ -27,13 +27,13 @@ const mongoConnect = async () => {
 app.use(cors())
 app.use(express.json())
 
-// Serve static files from the client build folder
-app.use(express.static(path.resolve(__dirname, "client/build")));
+// // Serve static files from the client build folder
+// app.use(express.static(path.resolve(__dirname, "client/build")));
 
-// Handle React Router routes
-app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
-});
+// // Handle React Router routes
+// app.get("*", function (req, res) {
+//   res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+// });
 
 
 // Default
@@ -450,6 +450,15 @@ app.get('/save-places', async (req, res) => {
         await client.close()
     }
 })
+
+// Serve static files from the client build folder & handle React Router routes
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, "client/build")));
+    app.get('*', (req, res) => {
+      res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+    });
+  }
 
 mongoConnect();
 
