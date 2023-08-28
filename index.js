@@ -17,34 +17,34 @@ let db;
 
 const mongoConnect = async () => {
     try {
-        const client = await MongoClient.connect(uri);
+        const client = await MongoClient.connect(uri)
         db = client.db('app-data');
         console.log('Connected to MongoDB');
     } catch (err) {
-        console.error('Error connecting to DB:', err);
+        console.error('Error connecting to DB:', err)
     }
 };
 
 // Define your route handlers here
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`)
 });
 
 // Serve static files from the client build folder
-app.use(express.static(path.resolve(__dirname, "client/build")));
+app.use(express.static(path.resolve(__dirname, "client/build")))
 
 // Handle React Router routes
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "client/build", "index.html"));
-});
+app.get("*", function (req, res) {
+  response.sendFile(path.resolve(__dirname, "client/build", "index.html"))
+})
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`)
 });
 
 // Call the async function to establish the database connection
-mongoConnect();
+mongoConnect()
 
 app.use(cors())
 app.use(express.json())
