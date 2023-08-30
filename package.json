@@ -11,7 +11,7 @@
     "start": "serve -s build",
     "dev": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm run start",
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon index.js",
