@@ -48,7 +48,7 @@ const ProfileModal = () => {
 
     const updateMatches = async (matchedUserId) => {
         try {
-            await axios.put('http://localhost:8000/addmatch', {
+            await axios.put('https://lmlmd-aaf8048793e5.herokuapp.com/addmatch', {
                 userId,
                 matchedUserId
             })

@@ -75,7 +75,7 @@ export default MyPlaces
 
   // const fetchSavedPlaces = async () => {
   //   try {
-  //     const response = await axios.get(`http://localhost:8000/save-places?userId=${userId}`)
+  //     const response = await axios.get(`https://lmlmd-aaf8048793e5.herokuapp.com/save-places?userId=${userId}`)
 
   //     setSavedPlaces(response.data)
   //   } catch (error) {
