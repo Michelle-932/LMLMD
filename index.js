@@ -37,9 +37,9 @@ app.use(express.json())
 
 
 // Default
-app.get('/', (req, res) => {
-    res.json('Backend server for lovemelovemydog.com app and concept ©2022-2023 Michelle Kirkland')
-})
+// app.get('/', (req, res) => {
+//     res.json('Backend server for lovemelovemydog.com app and concept ©2022-2023 Michelle Kirkland')
+// })
 
 
 
