@@ -321,6 +321,19 @@ video {
     margin-right: 1vw;
 }
 
+@media (max-width: 769px) {
+    .primary-title {
+        font-size: 3rem;
+    }
+    .button-container {
+        flex-direction: column;
+    }
+
+    .home h3 {
+        font-size: 1rem;
+    }
+}
+
 /******************************************
 /* FOOTER
 /*******************************************/
@@ -355,6 +368,11 @@ video {
     margin-top: 300px;
 }
 
+@media (max-width: 769px) {
+    .footer-home, .footer {
+        padding-top: 5px;
+    }
+}
 
 
 /******************************************
