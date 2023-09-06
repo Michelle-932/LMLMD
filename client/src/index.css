@@ -1016,9 +1016,7 @@ video {
 }
 
 @media (max-width: 768px) {
-    .demo .hero {
-        height: 35vh;
-    }
+
     
     .how-left {
     flex-direction: column;
@@ -1045,13 +1043,16 @@ video {
 
     .how-right p,h3 {
         padding-right: 10vw;
-        padding-left: 10vw;
-
+        padding-left: 0vw;
 
     }
 
     .demo button {
         margin-top: 1vh;
+    }
+
+    .demo-pictures p {
+        margin: auto;
     }
 
 }
