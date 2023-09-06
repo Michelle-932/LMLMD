@@ -1,7 +1,6 @@
-import Nav from '../components/Nav'
-import AuthModal from '../components/AuthModal'
 import {useState} from 'react'
-import {useCookies} from'react-cookie'
+import chatsample from '../images/chatsample.gif'
+import matchswipe from '../images/matchswipe.gif'
 import Footer from '../components/Footer'
 import {useNavigate} from 'react-router-dom'
 
@@ -45,16 +44,17 @@ const Demo = () => {
                             I built Love Me, Love My Dog to solve some problems I remember having while trying to meet new people.
                         </p>
                         <ul>
-                            <li>It's hard to find dog-friendly places to go, so you can meet your match and plan your date with this app!</li>
-                            <li>Meet people in dog-friendly places, which are well lit, full of other people and open during business hours</li>
-                            <li>Solve the problem of having nothing to talk about. At least you know you both like dogs!</li>
-                            <li>Your dog is an excellent judge of character and can help you feel better in unfamiliar situations</li>
+                            <li>It's hard to find dog-friendly places to go, so you can <strong>meet your match and plan your date</strong> with this app</li>
+                            <li><strong>Safety:</strong> Dog-friendly places are well lit, full of other people and open during business hours</li>
+                            <li><strong>Awkwardness:</strong> Solve the problem of having nothing to talk about. At least you know you both like dogs!</li>
+                            <li>Your dog is an excellent judge of character and can <strong>help you feel better</strong> in unfamiliar situations</li>
                         </ul>
                     </div>
                     <div className="how-right column">
                         <div className="how-1">
                             <h3>Create Profile</h3>
                             <p>Fill in your details and meet your match! Open to all regardless of disability, race, gender expression, or sexual orientation.</p>
+                            <p><i>Love Me, Love My Dog will <strong>never</strong> filter matches based on race, disability, or body type.</i></p>
                         </div>
                         <div className="how-2">
                             <h3>Find a Match</h3>
@@ -68,6 +68,12 @@ const Demo = () => {
                             <h3>Plan Your Date!</h3>
                             <p>Visit our places page for a list of dog-friendly places to go. Then, save your favorites to your list!</p>
                         </div>
+                    </div>
+                    <div className="demo-pictures">
+                        <p>For more technical details, <a href="https://github.com/michelle-932/LMLMD" target="_blank" rel="noopener noreferrer">visit the Github link.</a></p>
+                        <img className="sample-pic" src={matchswipe}/>
+                        {/* <img className="sample-pic" src={chatsample}/> */}
+                        
                     </div>
 
                 </div>

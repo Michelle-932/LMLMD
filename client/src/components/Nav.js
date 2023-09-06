@@ -28,7 +28,7 @@ const Nav = ({authToken, minimal, setShowModal, showModal, setIsSignUp}) => {
     return (
         <nav> 
             <div className="logo-container">
-                <img className="logo" src={logo}/>
+                <Link to="/"><img className="logo" src={logo}/></Link>
             </div>
 
 

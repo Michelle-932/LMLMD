@@ -205,9 +205,10 @@ nav .nav-button { /* Logout Button */
 .menu.open {
     display: flex;
     flex-direction: column;
-    margin-top: 5vh;
+    margin-top: 3vh;
+    margin-left: -2vh;
     padding-top: 2vh;
-    padding-left: .8vh;
+    padding-left: 0;
     background-color: var(--bluegray);
 }
 
@@ -876,6 +877,12 @@ video {
 /* DEMO PAGE
 /*******************************************/
 
+.demo h1,h3 {
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+
 
 .demo .hero {
     color: white;
@@ -883,7 +890,7 @@ video {
     display: flex;
     flex-direction: column;
     background-image: url('images/sunsetcoupledog.jpeg');
-    background-position: 75%;
+    background-position: 50%;
     align-self: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -894,6 +901,7 @@ video {
 .demo-title {
     text-align: center;
     font-size: 2rem;
+    
 }
 
 
@@ -947,47 +955,63 @@ video {
 
 .how-right p,h3 {
     color: white;
+    padding: 10px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+
 }
 
 .how-1 {
     background-color: var(--mauve2);
     margin-left: 5px;
-    padding: 5px;
+    
 }
 
 .how-2 {
     background-color: var(--indigogray);
 
-    padding: 5px;
+    
 }
 
 .how-3 {
     background-color: var(--bluegray);
 
-    padding: 5px;
+    
 }
 
 .how-4 {
     background-color: var(--indigo);
 
-    padding: 5px;
+    
 }
 
+.demo-pictures {
+    padding-top: 2vh;
+}
 
+.demo-pictures img {
+    padding: 10px;
+    max-width: 500px;
+    justify-content: space-evenly;
+}
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
+    .demo .hero {
+        height: 35vh;
+    }
+    
     .how-left {
     flex-direction: column;
     width: 100%;
 
     }
-/* 
-    .howItWorks > .how-left > ul {
-  
-    } */
 
     .how-left p {
         width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
 
     .how-left ul {
@@ -997,6 +1021,17 @@ video {
 
     .how-right {
         flex-direction: column;
+    }
+
+    .how-right p,h3 {
+        padding-right: 10vw;
+        padding-left: 10vw;
+
+
+    }
+
+    .demo button {
+        margin-top: 1vh;
     }
 
 }
