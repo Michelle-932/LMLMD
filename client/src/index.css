@@ -921,7 +921,7 @@ video {
 .demo-title {
     text-align: center;
     font-size: 2rem;
-    
+
 }
 
 
@@ -943,7 +943,7 @@ video {
 
 .how-left {
     display: flex;
-    margin-left: 10em;
+    margin-left: 8em;
     margin-right: 10em;
     text-align: center;
     padding-bottom: 3vh;
@@ -1015,10 +1015,36 @@ video {
     justify-content: space-evenly;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
 
-    
+    .demo .button-container {
+        flex-direction: row;
+    }
+
+    .demo-title {
+        width: 100vw;
+    }
+
+    .how-container {
+        width: 100vw;
+    }
+
     .how-left {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .how-right {
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    .demo-pictures {
+        width: 100vw;
+    } 
+
+
+    /* .how-left {
     flex-direction: column;
     width: 100%;
 
@@ -1053,7 +1079,7 @@ video {
 
     .demo-pictures p {
         margin: auto;
-    }
+    } */
 
 }
 
