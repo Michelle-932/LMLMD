@@ -2,11 +2,13 @@ import React, {useState} from 'react'
 import logo from '../images/lmlmdblack.png'
 import {useCookies} from 'react-cookie'
 import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const Nav = ({authToken, minimal, setShowModal, showModal, setIsSignUp}) => {
     const [ cookies, setCookie, removeCookie ] = useCookies(['user'])
     const [burgerOpen, setBurgerOpen] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleClick = () => {
         setShowModal(true)
@@ -21,7 +23,7 @@ const Nav = ({authToken, minimal, setShowModal, showModal, setIsSignUp}) => {
     const logout = () => {
         removeCookie('UserId', cookies.UserId)
         removeCookie('AuthToken', cookies.AuthToken)
-        window.location.reload()
+        navigate('/')
     }
 
 

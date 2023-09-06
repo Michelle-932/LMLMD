@@ -475,7 +475,7 @@ video {
 }
 
 .onboarding form input[type=radio]:checked + label {
-    border: solid 2px var(--purple);
+    border: solid 2px rgb(221, 39, 22);
 }
 
 .onboarding form input[type=submit]:hover {
@@ -483,12 +483,27 @@ video {
 }
 
 .onboarding form input[type=submit]:active {
-    background-color: var(--indigogray);
+    background-color: rgb(226, 115, 115);
 }
 
 .onboarding form .photo-container img {
     width: 100%
 }
+
+@media (max-width: 769px) {
+    .onboarding form .multiple-input-container {
+        flex-direction: column;
+    }
+
+    .onboarding {
+        width: 100vw;
+        margin-right: 1vw;
+        margin-left: 1vw;
+    }
+
+
+}
+
 
 /******************************************
 /* DASHBOARD
@@ -511,9 +526,14 @@ video {
 }
 
 .dashboard-card .page-title {
-    margin-bottom: 10vh;
+    margin-bottom: 3vh;
 }
 
+.dashboard-card h3 {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    color: black;
+}
 
 .dashboard-button {
   align-items: center;

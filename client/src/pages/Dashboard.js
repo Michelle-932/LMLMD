@@ -45,6 +45,7 @@ const Dashboard = () => {
                 <div className="dashboard-card">
 
                     <h1 className="page-title">Welcome</h1>
+                    <h3>This is your dashboard page. Click "My Matches" and swipe right! Then send them messages on the "Chat" page, and find a place to have a dog-friendly date on the "My Places" page. See how your profile looks to others by clicking "Profile."</h3>
 
                     <Link to="/mymatches"><button className="dashboard-button button1">My Matches</button></Link>
                     <Link to="/chatpage"><button className="dashboard-button button2">Chat</button></Link>

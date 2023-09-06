@@ -77,11 +77,11 @@ const OnBoarding = () => {
                 showModal={false}
             />
             <div className="onboarding">
-                <h2>CREATE ACCOUNT</h2>
+                <h2 className="page-title">CREATE ACCOUNT</h2>
 
                 <form onSubmit={handleSubmit}>
                     <section>
-                        <label htmlFor="first_name">First Name</label>
+                        <label htmlFor="first_name"><strong>First Name</strong></label>
                         <input
                             id="first_name"
                             type='text'
@@ -92,7 +92,7 @@ const OnBoarding = () => {
                             onChange={handleChange}
                         />
 
-                        <label>Birthday</label>
+                        <label><strong>Birthday</strong></label>
                         <div className="multiple-input-container">
                             <input
                                 id="dob_day"
@@ -125,7 +125,7 @@ const OnBoarding = () => {
                             />
                         </div>
 
-                        <label htmlFor="first_name">Location</label>
+                        <label htmlFor="first_name"><strong>Location</strong></label>
                         <input
                             id="location"
                             type='text'
@@ -137,7 +137,7 @@ const OnBoarding = () => {
                         />
 
 {/* ------ Gender Identity ------ */}
-                        <label>Gender</label>
+                        <label><strong>Gender</strong></label>
                         <div className="multiple-input-container">
 
                             <input
@@ -173,7 +173,7 @@ const OnBoarding = () => {
                         </div>
 
 {/* ------- Show Gender ------- */}
-                        <label htmlFor="show-gender">Show Gender on my Profile?</label>
+                        <label htmlFor="show-gender"><strong>Show Gender on Profile?</strong></label>
                         <input
                             id="show-gender"
                             type="checkbox"
@@ -184,7 +184,7 @@ const OnBoarding = () => {
 
 
 {/* ---------- Gender Interest --------- */}
-                        <label>I'm Interested In...</label>
+                        <label><strong>I'm Interested In...</strong></label>
 
                         <div className="multiple-input-container">
 
@@ -222,7 +222,7 @@ const OnBoarding = () => {
 
 
 
-                        <label htmlFor="about">Tagline</label>
+                        <label htmlFor="about"><strong>Tagline</strong></label>
                         <input
                             id="about"
                             type="text"
@@ -233,7 +233,7 @@ const OnBoarding = () => {
                             onChange={handleChange}
                         />
 
-                        <label htmlFor="about">About</label>
+                        <label htmlFor="about"><strong>About</strong></label>
                         <input
                             id="aboutlong"
                             type="text"
@@ -244,13 +244,10 @@ const OnBoarding = () => {
                             onChange={handleChange}
                         />
 
-                        <input type="submit"/>
+                
 
-                    </section>
-
-                    <section>
-
-                        <label htmlFor="url">Profile Photo</label>
+                        <label htmlFor="url"><strong>Profile Photo</strong></label>
+                        <p>Paste the URL for your photo here. The URL should end in the photo's extension ie., .jpg, .jpeg, or .png.</p>
                         <input
                             type="url"
                             name="url"
@@ -261,6 +258,8 @@ const OnBoarding = () => {
                         <div className="photo-container">
                             {formData.url && <img src={formData.url} alt="profile pic preview"/>}
                         </div>
+
+                        <input type="submit"/>
 
 
                     </section>
