@@ -57,7 +57,7 @@ const Home = () => {
             setIsSignUp={setIsSignUp}/> */}
         <div className="home">
             <h1 className="primary-title">Love Me, Love My Dog</h1>
-            <h3>The new dating app for people with dogs</h3>
+            <h3>Dating is rough. Bring your dog!</h3>
             <div className="button-container">
 
                 {authToken && <button
